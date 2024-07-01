@@ -9,10 +9,28 @@ def main(page: ft.Page):
             controls=[
                 ft.Container(
                     padding=40,
-                    content=ft.Image(src='images/Logo.png'),
+                    content=ft.Image(src='images/logo.png'),
                     bgcolor=ft.colors.BLACK,
                     shape=ft.BoxShape.CIRCLE,
                     height=200,
+                ),
+                ft.Container(
+                    content=ft.ResponsiveRow(
+                        controls=[
+                            ft.Row(
+                                controls=[
+                                    ft.Text(
+                                        value='hackingetico',
+                                        color=ft.colors.BLACK,
+                                        size=24,
+                                    ),
+                                    ft.icons(
+                                        name=ft.icons.VERIFIED,
+                                    )
+                                ]
+                            )
+                        ]
+                    )
                 )
             ]
         )
@@ -29,4 +47,4 @@ def main(page: ft.Page):
     page.add(layout)
 
 if __name__=='main':
-    ft.app(target=main, assets_dir='assets')
+    ft.app(target=main, port=8000, assets_dir='assets')
